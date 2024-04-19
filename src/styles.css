@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('http://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css');
+@import url('https://fonts.googleapis.com/css2?family=Average&display=swap');
+/* @import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css'); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html,
+/* body {
+   height: 100%;
+} */ */
+
+body {
+   margin: 0;
+   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+:root {
+   --main-color: #364c64;
+   /* --main-color:#222725; */
+   --color-dark: #1D2231;
+   /* --color-dark:#E4E6C3; */
+   --text-grey: #84878a;
+}
+
+/* * {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   list-style-type: none;
+   text-decoration: none;
+   font-family: 'Poppins', sans-serif;
+} */
+
+.form_new {
+   background-color: white;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   padding: 20px;
+}
+
+
+button {
+   border-radius: 0;
+   font-size: 14px;
+   padding: 3px 20px;
+}
+
+.button-group button:nth-child(2) {
+   margin-left: 20px;
+}
+
+input[type="file"]::file-selector-button {
+   border: none;
+   background-color: rgb(165, 165, 187);
+   padding: 4px 20px;
+   color: white;
+}
+
+small {
+   position: absolute;
+   margin-top: -10px;
+   font-size: 12px;
+}
+
+::placeholder {
+   font-size: 13px;
+}
+
+.button-group button {
+   border-radius: 0;
+   font-size: 13px;
+}

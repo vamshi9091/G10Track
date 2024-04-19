@@ -1,0 +1,67 @@
+<div class="container form_new">
+    <div class="container container1">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h2>CREATE USER DEPARTMENT </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <form #userDeptForm="ngForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-fields">
+                    <label>Department Name</label>
+                    <input type="text" class="form-control" id="deptName" name="deptName"
+                        [(ngModel)]="userDeptDto.deptName" required>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-fields">
+                    <label>Address</label>
+                    <input type="text" class="form-control" id="address" name="address"
+                        [(ngModel)]="userDeptDto.address" required>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-fields">
+                    <label>States</label>
+                    <select class="form-select" id="states" name="states" [(ngModel)]="userDeptDto.state" required
+                        ngModel #states="ngModel">
+                        <option value="" disabled>Select a state</option>
+                        <option *ngFor="let state of States.data" [value]="state.states">{{ state.states }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-fields">
+                    <label>Country</label>
+                    <input type="text" class="form-control" id="country" name="country"
+                        [(ngModel)]="userDeptDto.country" required>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary" [disabled]="userDeptForm.invalid"
+                    (click)="createUserDept()">
+                    Submit
+                </button>
+
+                <button type="submit" class="btn btn-warning" mat-dialog-close >
+                    Back
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

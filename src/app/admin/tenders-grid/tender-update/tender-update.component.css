@@ -1,0 +1,242 @@
+table {
+  width: 100%;
+  /* padding: 20px; */
+  /* overflow-x: auto; */
+
+  /* margin: 20px ; */
+}
+
+.mat-elevation-z8 {
+  overflow-x: auto !important;
+  /* margin: 20px !important; */
+  /* margin: 30px; */
+}
+
+.para p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 50px;
+  background-color: aliceblue;
+  /* background-color: #c5aa6a; */
+}
+
+/* .container1
+{
+    margin-top: 80px;
+} */
+
+form input {
+  padding: 10px;
+}
+
+.button1 button {
+  margin-top: 20px;
+}
+
+h2 {
+  color: #c5aa6a;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 26px;
+}
+
+#exampleFormControlTextarea1 {
+  box-shadow: none;
+}
+
+.form_New {
+  /* background-color: white; */
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  padding: 10px;
+  height: 500px;
+  overflow-y: auto;
+}
+
+.form_New1 {
+
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+  height: 596px;
+  /* overflow-y: auto; */
+
+}
+
+/* ------ Legend CSS----------- */
+legend {
+  background: lightgray !important;
+  padding: 5px 10px !important;
+  /* Adjust padding as needed */
+  border-radius: 5px !important;
+  /* If you want to round the corners of the legend */
+  border: 1px solid #ddd !important;
+  /* If you want to add a border around the legend */
+  width: auto !important;
+}
+
+fieldset,
+legend {
+  /* border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      padding: 10px; */
+  all: revert;
+  /* width: 100%; */
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.input-field i {
+  position: absolute;
+  right: 0;
+  line-height: 36px;
+  margin-right: 10px;
+  font-size: 17px;
+  color: #a09494;
+}
+.input-field1 {
+  margin-top: 20px;
+  margin-left: -23PX;
+
+}
+.input-field1 .fa-search{
+  height: 45px;
+  border-radius: 3px;
+  color:  #a09494;
+  border:1px solid #a09494 !important;
+}
+
+
+/* ------ Legend CSS end----------- */
+/* #sticky-header {
+  position: fixed;
+    top: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1500; 
+} */
+/* .fixed-header {
+  position: fixed !important;
+  top: 15px !important; 
+  left: 55% !important;
+  transform: translateX(-50%) !important;
+  z-index: 1000 !important;
+} */
+.fixed-header {
+  position: fixed;
+  top: 15px; /* Adjust as needed */
+  left: 55%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+label{
+  color: #a09494;
+}
+@media screen and (max-width: 320px) {
+  .fixed-header {
+    position: fixed;
+    top: 15px; /* Adjust as needed */
+    left: 46%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  } 
+  h2{
+    color: #c5aa6a;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 10px;
+  }
+}
+
+.form-control.btn.btn-successs {
+  font-size: 11px; /* Increased font size for better readability */
+  text-decoration: none; /* Removed underlining */
+  width: 100%; /* Full width */
+  height: 40px;
+  cursor: pointer;
+  padding: 10px; /* Increased padding for better touch target */
+  margin-top: 15px;
+  background-color: #28a745; /* Changed button background color to green */
+  color: #fff; /* Changed text color to white */
+  border: none; /* Removed border */
+  border-radius: 5px; /* Added border radius for rounded corners */
+  display: inline-block; /* Ensures element displays as a block while keeping inline properties */
+  text-align: center; /* Center-align text */
+}
+.form-control.btn.btn-danger {
+  font-size: 11px; /* Increased font size for better readability */
+  text-decoration: none; /* Removed underlining */
+  width: 100%; /* Full width */
+  height: 40px;
+  cursor: pointer;
+  padding: 10px; /* Increased padding for better touch target */
+  margin-top: 15px;
+  background-color: red; /* Changed button background color to green */
+  color: #fff; /* Changed text color to white */
+  border: none; /* Removed border */
+  border-radius: 5px; /* Added border radius for rounded corners */
+  display: inline-block; /* Ensures element displays as a block while keeping inline properties */
+  text-align: center; /* Center-align text */
+}
+
+
+.form-control.btn.btn-warning {
+  font-size: 14px; /* Increased font size for better readability */
+  text-decoration: none; /* Removed underlining */
+  height: 40px;
+  cursor: pointer;
+  padding: 10px; 
+  margin-top: 15px;
+  background-color: orange; /* Changed button background color to green */
+  color: #fff; /* Changed text color to white */
+  border: none; /* Removed border */
+  border-radius: 5px; /* Added border radius for rounded corners */
+  /* display: inline-block; Ensures element displays as a block while keeping inline properties */
+  text-align: center; /* Center-align text */
+}
+/* .form-control.btn.btn-warning a:hover{
+  color: white;
+  background: blue;
+} */
+.view{
+  margin-top: -5%;
+}
+.form-control.btn.btn-primary {
+  font-size: 11px; /* Increased font size for better readability */
+  text-decoration: none; /* Removed underlining */
+  width: 100%; /* Full width */
+  height: 40px;
+  cursor: pointer;
+  padding: 10px; /* Increased padding for better touch target */
+  margin-top: 15px;
+  background-color: blue; /* Changed button background color to green */
+  color: #fff; /* Changed text color to white */
+  border: none; /* Removed border */
+  border-radius: 5px; /* Added border radius for rounded corners */
+  display: inline-block; /* Ensures element displays as a block while keeping inline properties */
+  text-align: center; /* Center-align text */
+}
+.form-control.btn.btn-successs:hover {
+  background-color: white !important; /* Darker green on hover */
+  color: green;
+}
+.nav-tabs{
+  background-color: dimgrey;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding-top: 0px;
+  border-radius: 5px;
+  color: orange;
+}
+.nav-link{
+  color: orange;
+}
+.nav-link .active{
+  color: black;
+  font-weight: 400;
+}

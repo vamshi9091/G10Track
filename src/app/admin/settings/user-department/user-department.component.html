@@ -1,0 +1,156 @@
+<div>
+  
+
+    <div class="row ps-4  mt-n3">
+        <div class="col-md-3"> 
+            <div class="filter">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event)" placeholder="User Department" #input>
+            </mat-form-field>
+        </div></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+            <div class="btn-container pe-3" style="justify-content: end;">
+                <button mat-fab extended class="excel" (click)="exporter.exportTable('xlsx',{fileName:'User-Department'})" >
+                    <i class="bi bi-download"></i> &nbsp; Export to Excel
+                </button>
+                <button mat-fab extended class="btn" (click)="createUserDept()">
+                    <mat-icon>add</mat-icon>Create User Department
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <div class="mat-elevation-z8">
+            <table mat-table matTableExporter [dataSource]="dataSource" matSort #exporter="matTableExporter">
+
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                    <td mat-cell *matCellDef="let row">
+                        {{row.id}}
+                    </td>
+                </ng-container>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="deptName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Department Name </th>
+                    <td mat-cell *matCellDef="let row"> {{row.deptName}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="address">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+                    <td mat-cell *matCellDef="let row"> {{row.address}} </td>
+                </ng-container>
+
+                <!-- Status Column -->
+                <ng-container matColumnDef="state">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> State </th>
+                    <td mat-cell *matCellDef="let row"> {{row.state}} </td>
+                </ng-container>
+
+                <!-- PhoneNumber Column -->
+                <ng-container matColumnDef="country">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Country </th>
+                    <td mat-cell *matCellDef="let row"> {{row.country}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                    <td mat-cell *matCellDef="let row">
+                        <div style="display: flex; align-items: center;">
+                            <!-- <button mat-icon-button color="primary" (click)="viewEmployee(row)">
+                                <mat-icon>visibility</mat-icon>
+                            </button> -->
+                            <button mat-icon-button color="accent" (click)="editUserDept(row)">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <!-- <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the employee "{{input.value}}"</td>
+                </tr> -->
+            </table>
+
+            <mat-paginator class="table-container" [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons
+                aria-label=""></mat-paginator>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- <div class="container form_new">
+    <div class="container container1">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h2>CREATE USER DEPARTMENT </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-fields">
+                <label>Department Name</label>
+                <input type="text" class="form-control" id="deptName" name="deptName" [(ngModel)]="userDeptDto.deptName"
+                    required>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-fields">
+                <label>Address</label>
+                <input type="text" class="form-control" id="address" name="address" [(ngModel)]="userDeptDto.address"
+                    required>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-fields">
+                <label>States</label>
+                <select class="form-select" id="states" name="states" [(ngModel)]="userDeptDto.state" required ngModel
+                    #states="ngModel">
+                    <option value="" disabled>Select a state</option>
+                    <option *ngFor="let state of States.data" [value]="state.states">{{ state.states }}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-fields">
+                <label>Country</label>
+                <input type="text" class="form-control" id="country" name="country" [(ngModel)]="userDeptDto.country"
+                    required>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary" (click)="createUserDept()">
+                Submit
+            </button>
+
+            <button type="submit" class="btn btn-warning" routerLink="/home/tender-get">
+                Back
+            </button>
+        </div>
+    </div>
+</div> -->

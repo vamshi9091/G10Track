@@ -1,0 +1,106 @@
+.para p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 50px;
+    background-color: aliceblue;
+}
+
+form input {
+    padding: 10px;
+}
+
+.button1 button {
+    margin-top: 20px;
+}
+
+.bg {
+    /* background-color: lightgray; */
+    box-shadow: rgba(251, 198, 198, 0.2) 0px 2px 8px 0px;
+    padding: 20px;
+}
+
+
+h2 {
+    color: #c5aa6a;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 26px;
+}
+
+.input-field select {
+    margin-top: 0px;
+}
+
+.input-field select {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cfc4c4;
+    /* background: transparent; */
+    color: #484a4c;
+    outline: none;
+    padding: 5px;
+}
+
+
+.input-field {
+    position: relative;
+    margin-top: 20px;
+}
+
+.input-field input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cfc4c4;
+    background: transparent;
+    color: #484a4c;
+    outline: none;
+    padding: 5px;
+
+}
+
+.input-field textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cfc4c4;
+    background: transparent;
+    color: #484a4c;
+    outline: none;
+    padding: 5px;
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-150%);
+    color: #a09494;
+    pointer-events: none;
+    transition: 0.3s;
+    font-size: 12px;
+    /* display: none; */
+}
+
+.remark label {
+    margin-top: 10px !important;
+    color: #a09494 !important;
+}
+
+#desc1 {
+    padding: 10px;
+}
+
+.fa-search {
+    margin-top: -10px;
+    margin-left: -20px;
+    /* background-color: yellow; */
+    width: 40px;
+}
+
+.input-field i {
+    position: absolute;
+    right: 0;
+    line-height: 36px;
+    margin-right: 10px;
+    font-size: 17px;
+    color: #a09494;
+}

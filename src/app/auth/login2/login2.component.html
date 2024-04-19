@@ -1,0 +1,88 @@
+
+
+
+
+<div class="container-fluid" >
+    <!-- <div class="bg" style="background-color: #575757; height: 110px;"> 
+    <div class="row ms-3 " >      
+                <img  src="../../../assets/images/g10trackLogo21.png" style="width:130px;height: 70px;" class="mt-3">
+            </div>   
+    </div> -->
+    <br>
+    <div class="row loginbg">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 ">
+            <mat-card>
+
+              
+                <mat-card-header class="mat-mdc-card-header " style="background-color:  #575757; height: 100px; border-radius: 3px;">
+                    <img src="../../../assets/images/G__5_-removebg-preview.png" style="width:100px;height: 100px;" >
+                    
+                </mat-card-header>
+                <mat-card-title class="mat-mdc-card-title">Change Password</mat-card-title>
+                <mat-card-content>
+                    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+                        <mat-form-field appearance="fill">
+                            <mat-label>User Name</mat-label>
+                            <input matInput type="text" id="userName" name="username" [(ngModel)]="userdto.userName" readonly >
+                        </mat-form-field>
+        
+                        <mat-form-field appearance="fill">
+                            <mat-label>Enter New Password</mat-label>
+                            <input matInput type="password"  id="password" name="password" [(ngModel)]="userdto.password" #newPassword="ngModel">
+                        </mat-form-field>
+        
+                        <mat-form-field appearance="fill">
+                            <mat-label>Confirm New Password</mat-label>
+                            <input matInput type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="userdto.confirmPassword" #confirmPasswordInput="ngModel">
+                            <!-- <input matInput 
+                            [type]="hide ? 'password' : 'text'" 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            [(ngModel)]="userdto.confirmPassword" 
+                            #confirmPasswordInput="ngModel">
+                            
+                     <button mat-icon-button matSuffix 
+                             (click)="togglePasswordVisibility()" 
+                             [attr.aria-label]="hide ? 'Show password' : 'Hide password'" 
+                             [attr.aria-pressed]="!hide">
+                         <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon> 
+                     </button> -->
+                        </mat-form-field>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-7" *ngIf="confirmPasswordInput.touched && userdto.password !== userdto.confirmPassword" class="text-danger ml-n20">
+                                *Passwords do not match.
+                            </div>
+                        </div>
+                        
+        <br>
+                          <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-3">
+                                <button mat-raised-button style="background-color: #2884D1; color: white; width: 80px;" >
+                                    Submit
+                                </button>
+                            </div>
+
+                            <div class="col-md-6"></div>
+                            <div class="col-md-2">
+                                <button mat-raised-button color="warn" style="width: 80px;" (click)="back()">
+                                    Back
+                                </button>
+                            </div>
+                          </div>
+                        <div class="btn">
+                           
+                            
+                        </div>
+        
+                    </form>
+                </mat-card-content>
+        
+            </mat-card>
+        </div>
+        <div class="col-md-4"></div>
+       
+    </div>
+</div>

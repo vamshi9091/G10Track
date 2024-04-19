@@ -1,0 +1,65 @@
+<div class="container form_new">
+    <div class="container container1">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h2>CHECK TRANSACTION</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+<form [formGroup]="checkform" (submit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-fields">
+                <label class="form-label">Bank Name</label>
+                <input type="text" class="form-control" placeholder="Bank Name" id="bankName" name="bankName" formControlName="bankName"
+                  required>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-fields">
+                <label class="form-label">Cheque Number</label>
+                <input type="text" class="form-control" placeholder="Check Number" id="checkNo" name="checkNo" formControlName="checkNo"
+                    required>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-fields">
+                <label class="form-label">Check Issue Date </label>
+                <input type="date" class="form-control" id="checkIssueDate" name="checkIssueDate" formControlName="checkIssueDate"
+                     />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-fields">
+                <label class="form-label">Check Clear Date </label>
+                <input type="date" class="form-control" id="checkClearDate" name="checkClearDate" formControlName="checkClearDate"
+                     />
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary" >
+                Save
+            </button>
+
+            <button class="btn btn-warning" mat-dialog-close>
+                Cancel
+            </button>
+        </div>
+    </div>
+</form>
+</div>

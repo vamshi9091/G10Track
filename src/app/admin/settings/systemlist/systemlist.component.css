@@ -1,0 +1,22 @@
+.background{
+    background-color: lightgray;
+}
+/* .form{
+    margin-top: 100px;
+} */
+select:focus{
+    box-shadow: none;
+}
+input:focus{
+    box-shadow: none;
+}
+h2 {
+    color: black;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 26px;
+  }
+  .btn1 {
+    background-color: #567AED;
+    color: #ffffff;
+}

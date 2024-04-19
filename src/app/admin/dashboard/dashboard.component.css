@@ -1,0 +1,842 @@
+/* .dropdown-toggle{
+    border: 1px solid black;
+}
+button:focus{
+box-shadow:none ;
+} */
+
+/* .background_color{
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(103, 178, 111), rgb(76, 162, 205)) repeat scroll 0% 0%;
+} */
+.backgroundDate{
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 80px;
+    width: 100%;
+    /* padding: 10px; */
+  }
+.sub_bg_color{
+   /* background-color: rgba(172, 209, 237, 0.51); */
+   background-color: lightgray;
+   box-shadow: 0px 4px 6px rgba(290, 213, 219, 0.3);
+   height: auto;
+   /* padding-top: 40px; */
+   padding-bottom: 60px !important;
+   /* border-top: 1px rgba(0,0,0,0.05) solid; */
+   
+}
+select:focus{
+    box-shadow: none;
+    
+}
+.advance-search-button {
+    padding: 10px 0px 0px 10px !important;
+}
+.advance-search-button a {
+    color: black;
+}
+.advance-search-button a .fa {
+    color: #FE8F08;
+}
+.advance-search-button a .fa-map-marker {
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+    background-color: transparent;
+}
+.form-select{
+    border-radius: 0px;
+    height: 45px;
+    margin-top: 20px;
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    border-color: 2px solid black;
+}   
+.form-text{
+    border-radius: 0px;
+    height: 45px;
+    margin-top: 20px;
+    color: #bbb9b9;
+    font-size: 14px;
+    font-weight: 400;
+}
+.button_color{
+    border-radius: 0px;
+    height: 45px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+option{
+    height: 200px;
+}
+
+.earnings-cardcard1 {
+    /* background-color: #E1AE81 ; */
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(66, 153, 225, 0.3);
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px auto;
+}
+.earnings-cardcard2{
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 128, 128, 0.3);
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px auto
+}
+.earnings-cardcard3{
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(255, 165, 0, 0.3);
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px auto
+}
+.earnings-cardcard4{
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(255, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 100%;
+    margin: 20px auto 
+}
+
+.earnings-card1{
+    background-color: rgba(26, 70, 104, 0.51);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    width: 250px;
+    margin: 20px auto;
+    text-align: center;
+    justify-items: center;
+}
+.earnings-card-title{
+padding: 10px;
+}
+.revenue1{
+    background-color: black;
+    /* box-shadow: 0px 4px 6px rgba(0, 128, 128); */
+    border-radius: 10px;
+    width: 100%;
+  
+}
+
+.earnings-title2{
+    /* margin-top: 20px; */
+    font-size: 18px;
+    font-weight: 400;
+    height: 20px;
+    /* color: lightgray; */
+    color: rgb(41, 39, 39);
+    font-family: "Average", serif;
+    margin-top: 30px; 
+}
+.earnings-title{
+    font-size: 40px;
+    color: black;
+    font-weight: 600;
+    padding: 0px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.icon{
+    background-color: red;
+    height: 60px;
+    width: 70px;
+    margin-top: -20px;
+    padding: 5px;
+    margin-left: 3px;
+}
+.icon1{
+    background-color: #3b82f6;
+    height: 60px;
+    width: 70px;
+    margin-top: -20px;
+    padding: 5px;
+    margin-left: 3px;
+}
+.icon2{
+    background-color: teal;
+    height: 60px;
+    width: 70px;
+    margin-top: -20px;
+    padding: 5px;
+    margin-left: 3px;
+}
+.icon3{
+    background-color: #f97316;
+    height: 60px;
+    width: 70px;
+    margin-top: -20px;
+    padding: 5px;
+    margin-left: 3px;
+}
+/* -------- secound-box css starts ------------------ */
+.earnings-card2{
+    background-color: #00c0ef;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    width: 100%;
+    height: 120px;
+    margin: 20px auto;
+}
+.earnings-card3{
+    background-color: #00bf86;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    width: 100%;
+    height: 120px;
+    margin: 20px auto;
+}
+.earnings-card4{
+    background-color: #ffa000;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    width: 100%;
+    height: 120px;
+    margin: 20px auto;
+}
+
+/* Flip card styles */
+.flip-card {
+    background-color: transparent;
+    width: 300px; /* Adjust as needed */
+    /* height: 120px; Adjust as needed */
+    border-radius: 10px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 12px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.revenue1{
+    background-color: #00c0ef;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    width: 100%;
+    height: 120px;
+    margin: 20px auto;
+}
+
+.revenue2{
+    margin:20px auto;
+}
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+}
+.earnings-title2-1 {
+    font-size: 24px;
+    /* padding: 20px; */
+    font-weight: bold;
+    color: #fff;
+    /* margin-bottom: 10px; */
+}
+
+
+.earnings-title2-2{
+    font-size: 18px;
+    font-family: "Average", serif;
+    font-weight: 400;
+    font-style: normal;
+    /* margin-bottom: 10px;  */
+    color: #fff;
+}
+
+
+/* -------- secound-box css end ------------------ */
+
+/* -------- secound-box 2 "row" css starts------------------ */
+
+.earnings-card5{
+    background-color: #ea6c41;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    justify-items: center;
+}
+.earnings-card6{
+    background-color: #e69a2a;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    justify-items: center;
+}
+.earnings-card7{
+    background-color: #469408;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    justify-items: center;
+}
+.earnings-card8{
+    background-color: #177ec1;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    justify-items: center;
+}
+
+.earnings-title-r2{
+    font-size: 23px;
+    font-weight: 400;
+    /* color: lightgray; */
+    color: #fff;
+    margin-bottom: 10px; 
+    margin-left: -10px;
+}
+.earnings-title1{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Average", serif;
+    /* color: lightgray; */
+    color: #fff;
+    margin-bottom: 10px; 
+    margin-left: 0px; 
+}
+/* -------- secound-box 2 "row" css end ------------------ */
+
+.chart-container{
+    /* background-color: lightblue; */
+    height: 420px !important;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+canvas{
+    height: 300px;
+    width: 100%;
+    padding: 30px;
+}
+.earnings-amount {
+    font-size: 18px;
+    color: #000000;
+}
+.abc{
+    background-color: #00c0ef;
+    width: 80px;
+    height: 80px;
+    /* margin-bottom:-100px ; */
+}
+
+/* .abc span{
+    margin-bottom:-10%  !important ;
+
+} */
+.percentage-change {
+    font-size: 18px;
+    color: black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-weight: 500;
+    /* margin-bottom: -30px; */
+    font-family: sans-serif;
+}
+.percentage-change1 {
+    font-size: 14px;
+    color: white;
+    background-color:rgb(46, 204, 113);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.percentage-change2 {
+    font-size: 14px;
+    color: white;
+    background-color: #ff6600;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.percentage-change3 {
+    font-size: 14px;
+    color: white;
+    background-color: red;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.percentage-icon {
+    margin-right: 5px;
+
+}
+
+.percentage-icon-increase{
+    justify-content: end;
+}
+
+.background_color2{
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* padding: 20px; */
+}
+.background_color2receivables{
+    background-color: whitesmoke;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* padding: 20px; */
+}
+
+
+.card1 {
+    background: linear-gradient(135deg, #5075d4, #9C2CF3);
+    height: 120px;
+    border-radius: 10px;
+  }
+
+  /* .eclipse1
+ {
+    width: 200px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+   */
+  
+  
+ 
+  
+/* For large devices and above */
+@media (min-width: 320px) {
+    
+    .sub_bg_color{
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .earnings-card{
+        margin-top: 50px !important;
+    }
+    .icon1 {
+        height: 30px; /* Keep height for large screens */
+        width: 40px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 80px !important; /* Keep margin-left for large screens */
+    }
+    .icon2 {
+        height: 30px; /* Keep height for large screens */
+        width: 40px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 80px !important; /* Keep margin-left for large screens */
+    }
+    .icon3 {
+        height: 30px; /* Keep height for large screens */
+        width: 40px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 80px !important; /* Keep margin-left for large screens */
+    }
+    .icon {
+        height: 30px; /* Keep height for large screens */
+        width: 40px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 80px !important; /* Keep margin-left for large screens */
+    }
+    .iconfont{
+        font-size: 20px !important;
+    }
+    .percentage-change {
+        font-size: 15px; /* Keep font size for large screens */
+        padding: 10px; /* Keep padding for large screens */
+        margin-bottom: -30px; /* Keep margin-bottom for large screens */
+    }
+    .earnings-title{
+        font-size: 30px;
+        font-weight: 400 !important;
+    }
+    
+.card1 {
+    background: linear-gradient(135deg, #5075d4, #9C2CF3);
+    height: 80px;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 30px;
+  }
+ .card1 .earnings-title2-2{
+    font-size: 16px;
+    font-family: "Average", serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-top:5px ;
+    /* margin-bottom: 10px;  */
+    color: #fff;
+ }
+ 
+ .margiintop{
+    margin-top: 95% !important;
+  }
+}
+
+@media (min-width: 375px) {
+    .sub_bg_color{
+        height: auto;
+        padding-bottom: 30px;
+     }
+    .icon1 {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 120px !important; /* Keep margin-left for large screens */
+    }
+    .icon2 {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 120px !important; /* Keep margin-left for large screens */
+    }
+    .icon3 {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 120px !important; /* Keep margin-left for large screens */
+    }
+    .icon {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 120px !important; /* Keep margin-left for large screens */
+    }
+    .iconfont{
+        font-size: 40px !important;
+    }
+    .percentage-change {
+        font-size: 15px; /* Keep font size for large screens */
+        padding: 10px; /* Keep padding for large screens */
+        margin-bottom: -30px; /* Keep margin-bottom for large screens */
+    }
+    .earnings-title{
+        font-size: 30px;
+        font-weight: 400 !important;
+    }
+    .margiintop{
+        margin-top: 65% !important;
+      }
+   
+      .titles1 .earnings-title2-2 {
+        font-size: 13px !important;
+        padding: 0px;
+      }
+      .titles1 .earnings-title2-1 span{
+        font-size: 13px !important;
+        padding: 0px;
+      }
+}
+
+@media (min-width: 425px) {
+    .margiintop{
+        margin-top: 45% !important;
+      }
+    .sub_bg_color{
+        height: auto;
+        padding-bottom: 30px;
+     }
+    .icon1 {
+        height: 30px; /* Keep height for large screens */
+        width: 40px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 60% !important; /* Keep margin-left for large screens */
+    }
+    .icon2 {
+        height: 30px; /* Keep height for large screens */
+        width: 40px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 60% !important; /* Keep margin-left for large screens */
+    }
+    .icon3 {
+        height: 30px; /* Keep height for large screens */
+        width: 40px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 60% !important; /* Keep margin-left for large screens */
+    }
+    .icon {
+        height: 30px; /* Keep height for large screens */
+        width: 40px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 60% !important; /* Keep margin-left for large screens */
+    }
+    .iconfont{
+        font-size: 20px !important;
+    }
+    .percentage-change {
+        font-size: 15px; /* Keep font size for large screens */
+        padding: 10px; /* Keep padding for large screens */
+        margin-bottom: -30px; /* Keep margin-bottom for large screens */
+    }
+    .earnings-title{
+        font-size: 30px;
+        font-weight: 400 !important;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .sub_bg_color{
+        height: auto;
+        padding-bottom: 30px;
+     }
+     .earnings-title2-2{
+        font-size: 15px;
+     }
+     .earnings-title2-1{
+        font-size: 18px;
+     }
+     .earnings-title1{
+        font-size: 15px;
+    
+     }
+     .earnings-title-r2{
+        font-size: 18px;
+     }
+    .icon1 {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 58% !important; /* Keep margin-left for large screens */
+    }
+    .icon2 {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 58% !important; /* Keep margin-left for large screens */
+    }
+    .icon3 {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 58% !important; /* Keep margin-left for large screens */
+    }
+    .icon {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 58% !important; /* Keep margin-left for large screens */
+    }
+    .iconfont{
+        font-size: 40px !important;
+    }
+    .percentage-change {
+        font-size: 15px; /* Keep font size for large screens */
+        padding: 10px; /* Keep padding for large screens */
+        margin-bottom: -30px; /* Keep margin-bottom for large screens */
+    }
+    .earnings-title{
+        font-size: 30px;
+        font-weight: 400 !important;
+    }
+    .card1 {
+        background: linear-gradient(135deg, #5075d4, #9C2CF3);
+        height: 125px;
+        border-radius: 10px;
+      }
+      .margiintop{
+        margin-top: 25% !important;
+      }
+      .titles1 .earnings-title2-2 {
+        font-size: 13px !important;
+        padding: 0px;
+      }
+      .titles1 .earnings-title2-1 span{
+        font-size: 13px !important;
+        padding: 0px;
+      }
+      .col-md-4 .revenuesvg{
+        display: none;
+      }
+      .col-md-8 .titles1{
+        width: 100%;
+        max-width: none;
+      }
+    
+      
+}
+
+@media (min-width: 1024px) {
+   
+    .icon1 {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 57% !important; /* Keep margin-left for large screens */
+    }
+    .icon2 {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 57% !important; /* Keep margin-left for large screens */
+    }
+    .icon3 {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 57% !important; /* Keep margin-left for large screens */
+    }
+    .icon {
+        height: 50px; /* Keep height for large screens */
+        width: 60px; /* Keep width for large screens */
+        margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 57% !important; /* Keep margin-left for large screens */
+    }
+    .iconfont{
+        font-size: 40px !important;
+    }
+    .percentage-change {
+        font-size: 15px; /* Keep font size for large screens */
+        padding: 10px; /* Keep padding for large screens */
+        margin-bottom: -30px; /* Keep margin-bottom for large screens */
+    }
+    .earnings-title{
+        font-size: 30px;
+        font-weight: 400 !important;
+    }
+    .card1 {
+        background: linear-gradient(135deg, #5075d4, #9C2CF3);
+        height: 120px;
+        border-radius: 10px;
+      }
+      .margiintop{
+        margin-top:16% !important;
+      }
+      .titles1 .earnings-title2-2 {
+        font-size: 18px;
+        font-family: "Average", serif;
+        font-weight: 400;
+        font-style: normal;
+        /* margin-bottom: 10px;  */
+        color: #fff;
+      }
+      .titles1 .earnings-title2-1 span{
+        font-size: 20px;
+        /* padding: 20px; */
+        font-weight: bold;
+        color: #fff;
+        /* margin-bottom: 10px; */
+      }
+      .revenuesvg{
+        width: 50px;
+        height: 50px;
+      }
+}
+@media (min-width: 1440px) {
+    .revenuesvg{
+        width: 80px;
+        height: 80px;
+        font-weight: 500;
+    }
+    .margiintop{
+        margin-top:12% !important;
+      }
+      .titles1 .earnings-title2-2 {
+        font-size: 15px !important;
+        font-family: "Average", serif;
+        font-weight: 400;
+        font-style: normal;
+        /* margin-bottom: 10px;  */
+        color: #fff;
+      }
+      .titles1 .earnings-title2-1 span{
+        font-size: 18px !important;
+        /* padding: 20px; */
+        font-weight: bold;
+        color: #fff;
+        /* margin-bottom: 10px; */
+      }
+    .earnings-title{
+        font-size: 40px;
+        color: black;
+        font-weight: 600;
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+    .icon{
+    background-color: red;
+    height: 60px;
+    width: 70px;
+    margin-top: -20px;
+    padding: 5px;
+    margin-left: 65% !important;
+}
+.icon1{
+    background-color: #3b82f6;
+    height: 60px;
+    width: 70px;
+    margin-top: -60px !important; /* Keep margin-top for large screens */
+        margin-left: 65% !important;
+}
+.icon2{
+    background-color: teal;
+    height: 60px;
+    width: 70px;
+    margin-top: -60px;
+    /* padding: 5px; */
+    margin-left: 65% !important;
+}
+.icon3{
+    background-color: #f97316;
+    height: 60px;
+    width: 70px;
+    margin-top: -60px;
+    padding: 5px;
+    margin-left: 65% !important;
+}
+    .iconfont{
+        font-size: 40px !important;
+    }
+    .percentage-change {
+        font-size: 18px;
+        color: black;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        font-weight: 500;
+        /* margin-bottom: -30px; */
+        font-family: sans-serif;
+    }
+   
+}

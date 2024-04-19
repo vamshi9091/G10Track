@@ -1,0 +1,20 @@
+<!-- <p>savetendersubstatus works!</p> -->
+<form (ngSubmit)="onSubmitnote()" #mynoteForm="ngForm" class="form_new">
+    <div class="row">
+      <h3>Enter Notes</h3>
+      <br>
+      <textarea class="form-control" name="note" [(ngModel)]="Notesdto.note" id="exampleFormControlTextarea1"
+        placeholder="Enter notes" rows="2" required></textarea>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="button-group p-1">
+          <button type="submit" [disabled]="!mynoteForm.form.valid" class="btn btn-primary">
+            Save
+          </button>
+          <button  class="btn btn-danger" matDialogClose>
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>

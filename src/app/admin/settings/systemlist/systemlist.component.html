@@ -1,0 +1,253 @@
+<div class="background">
+  <div class="container"  >
+    <!-- <div class="row">
+      Create SystemList
+    </div> -->
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+        <br />
+        <h2 class="form-label" style="font-weight: bold;font-size: large;">SYSTEM LIST</h2>
+        <select class="form-select"   id="name" name="name" required ngModel #name="ngModel" (ngModelChange)="onChange($event)">
+          <option value="" selected style="background-color: lightgray;">Select System List Name</option>
+          <option *ngFor="let list of SystemList.data" [value]="list.id +','+list.name">{{list.name}}</option>
+        </select>
+      </div>
+
+      <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+      <div class="col-md-3"> <br /><br/>
+         <button mat-fab extended class="btn1" (click)="openSystemlistform()">  <mat-icon>add</mat-icon>Create System List</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-12"></div>
+      <div class="col-md-8" *ngIf="isAdd">
+        <div class="row ">
+          <div class="co-md-12">
+            <div class="form ">
+              <form #myForm="ngForm" class="form_new">
+                <div class="row">
+                  <i style="color: red;" class="mb-3">* Add List Item:</i>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="input-fields">
+                      <label class="form-label">List Item</label>
+                      <input type="text" class="form-control" id="listItem" name="listItem"
+                        [(ngModel)]="listItemDto.listItem" required>
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-3">
+                    <div class="input-fields">
+                      <label class="form-label">List Name</label>
+                      <input type="text" class="form-control" id="listName" name="listName"
+                        [(ngModel)]="listItemDto.listName" />
+                    </div>
+                  </div> -->
+                  <div class="col-md-4">
+                    <div class="input-fields">
+                      <label for="" class="form-label">Status</label>
+                      <select class="form-select" name="status" id="status" [(ngModel)]="listItemDto.status">
+                        <option value="">Select</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="input-fields mt-4">
+                          <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+                            SAVE
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-fields mt-4">
+                          <button type="submit" (click)="closeForm()" class="btn btn-danger">
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-12"></div>
+    <div class="col-md-8" *ngIf="isAddSubListItem">
+      <div class="row ">
+        <div class="co-md-12">
+          <div class="form ">
+            <form #myForm="ngForm" class="form_new">
+              <div class="row">
+                <i style="color: red;" class="mb-3">* Add Sub-List Item:</i>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="input-fields">
+                    <label class="form-label">List Item</label>
+                    <select class="form-select"   id="name" name="name" required ngModel #name="ngModel"  (ngModelChange)="onChangeSublistname($event)">
+                      <option value="" selected style="background-color: lightgray;">Select List Item Name</option>
+                      <option *ngFor="let list of ListItem.data" [value]="list.id +','+list.listItem">{{list.listItem}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="input-fields">
+                    <label class="form-label">Sub-List Item</label>
+                    <input type="text" class="form-control" id="subListItem" name="subListItem"
+                      [(ngModel)]="sublistItemdto.subListItem" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="input-fields">
+                    <label for="" class="form-label">Status</label>
+                    <select class="form-select" name="status" id="status" [(ngModel)]="sublistItemdto.status">
+                      <option value="">Select</option>
+                      <option value="Active">Active</option>
+                      <option value="Inactive">Inactive</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-fields mt-4">
+                        <button type="submit" class="btn btn-primary" (click)="onSubmitSublist()">
+                          SAVE
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-fields mt-4">
+                        <button type="submit" (click)="closeForm2()" class="btn btn-danger">
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <br />
+  </div>
+</div>
+<br />
+<div class="conatiner" *ngIf="sysListName">
+  <h4><span class="text-danger">*</span> ListItem of {{sysListName}}</h4>
+  <h4><span class="text-danger">*</span> To Get SublistItems, Click on row of List Items</h4>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="listName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>listName</th>
+        <td mat-cell *matCellDef="let row">{{ row.listName }}</td>
+      </ng-container>
+      <ng-container matColumnDef="listItem">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>listItem</th>
+        <td mat-cell *matCellDef="let row">{{ row.listItem }}</td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>status</th>
+        <td mat-cell *matCellDef="let row">{{ row.status }}</td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+        <td mat-cell *matCellDef="let row">
+          <div style="display: flex; align-items: center">
+            <button mat-icon-button color="accent" (click)="editListItem(row)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="onRowClick($event, row)" ></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the list item</td>
+      </tr>
+   
+    </table>
+
+
+    <mat-paginator class="table-container"  showFirstLastButtons
+      aria-label=""></mat-paginator>
+      <!-- <mat-paginator class="table-container" [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons
+      aria-label="" [pageSize]="5" ></mat-paginator> -->
+  </div>
+<br>
+
+
+  <div *ngIf="sysListName==='Tender Status' || sysListName==='Verticals'">
+<h4><span class="text-danger">*</span> SubListItem of {{newsublistname}}</h4>
+  <table mat-table [dataSource]="dataSource2" matSort class="mat-elevation-z8" >
+    <ng-container matColumnDef="listItem">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>List Name</th>
+      <td mat-cell *matCellDef="let row">{{ row.listItem }}</td>
+    </ng-container>
+    <ng-container matColumnDef="subListItem">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Sub List Name</th>
+      <td mat-cell *matCellDef="let row">{{ row.subListItem }}</td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let row">{{ row.status }}</td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+      <td mat-cell *matCellDef="let row">
+        <div style="display: flex; align-items: center">
+          <button mat-icon-button color="accent" (click)="editSubListItem(row)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns1" ></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <ng-container matNoDataRow *ngIf="dataSource.filteredData.length === 0">
+      <tr class="mat-row">
+        <td class="mat-cell" colspan="4">No data matching the list item</td>
+      </tr></ng-container>
+  </table>
+  <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons
+    aria-label="Second table paginator" [pageSize]="5" [length]="dataSource2.data.length"
+    [pageIndex]="0" #paginator2>
+  </mat-paginator> -->
+</div>
+</div>
+<!-- <div>
+      <label>Select List Name</label>
+      <select  [(ngModel)]="saveSystemLists.listName" (ngModelChange)="onChange($event)">
+        <option value="">Select List Name</option>
+        <option *ngFor="let name of namesList" [value]="name">{{name}}</option>
+      </select>
+
+  </div>
+  <div class="col-md-4" *ngIf="isAdd">
+      <label>List Item</label>
+      <input matInput type="text" id="inputContactPhone" placeholder="List Name">
+  </div> -->

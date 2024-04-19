@@ -1,0 +1,50 @@
+h2 {
+  color: #c5aa6a;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 26px;
+}
+.form_new1{
+  /* background-color: white; */
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  padding: 20px;
+  height: auto;
+}
+/* #sticky-header {
+  position: fixed;
+    top: 80px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; 
+} */
+/* .form_new {
+  height: max-content;
+  width: 500px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+legend {
+  background: lightgray !important;
+  padding: 3px 10px !important;
+  /* Adjust padding as needed */
+  border-radius: 5px !important;
+  /* If you want to round the corners of the legend */
+  border: 1px solid lightgray !important;
+  /* If you want to add a border around the legend */
+  width: auto !important;
+}
+
+fieldset,
+legend {
+  border: 1px solid lightgray !important;
+  /* border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      padding: 10px; */
+  all: revert;
+  margin-top: 3px;
+  /* width: 100%; */
+}
+

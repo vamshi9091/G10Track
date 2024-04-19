@@ -1,0 +1,63 @@
+<div class="container container1">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h2>UPDATE SUB LIST ITEM</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form #myForm="ngForm" class="form_new">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-fields">
+                            <label class="form-label">List Item</label>
+                            <input type="text" class="form-control" id="listItem" name="listItem"
+                                [(ngModel)]="subListItemDto.listItem" required readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-fields">
+                            <label class="form-label">Sub List Name</label>
+                            <input type="text" class="form-control" id="subListItem" name="subListItem"
+                                [(ngModel)]="subListItemDto.subListItem" />
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-fields">
+                            <label for="" class="form-label">Status</label>
+                            <select class="form-select" name="status" id="status" [(ngModel)]="subListItemDto.status">
+                                <option value="">Select</option>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+                            Update
+                        </button>
+
+                        <button class="btn btn-warning" (click)="onBack()">
+                            Back
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

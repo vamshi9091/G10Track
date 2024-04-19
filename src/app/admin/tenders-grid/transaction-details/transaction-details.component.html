@@ -1,0 +1,316 @@
+<div class="form_new1">
+   
+    <div class="container container1">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center" >
+                    <h2>TRANSACTION DETAILS</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-fields">
+                <label class="form-label">In Favour Of</label>
+                <input type="text" class="form-control" placeholder="Title" id="title" name="title"
+                    [(ngModel)]="transactionDetails.title" required>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="input-fields">
+                <label class="form-label">Transaction For</label>
+                <!-- <input type="text" class="form-control" placeholder="Transaction For" id="transactionFor"
+                    name="transactionFor" [(ngModel)]="transactionDetails.transactionFor" required> -->
+                    <select id="transactionFor" class="form-select " name="transactionFor"
+                    [(ngModel)]="transactionFor" required disabled>
+                    <option value="">Select</option>
+                    <option value="EMD">EMD</option>
+                    <option value="BG">BG</option>
+                    <option value="DocumentFee">DocumentFee</option>
+                    <option value="CorpusFee">CorpusFee</option>
+                    <option value="TransactionFee">TransactionFee</option>
+                    <option value="ProcessingFee">ProcessingFee</option>
+                </select>  
+            </div>
+
+           
+        </div>
+        <div class="col-md-4">
+            <!-- <div class="input-fields">
+                <label class="form-label">Transaction Type</label>
+                <select id="transactionType" class="form-select " name="transactionType"
+                    [(ngModel)]="transactionType" required>
+                    <option value="">Select</option>
+                    <option value="payable">Payable</option>
+                    <option value="receivable">Receivable</option>
+                </select>
+            </div> -->
+            <div class="input-fields">
+                <label class="form-label">Transaction Date </label>
+                <input type="date" class="form-control" id="date" name="transactionDate"
+                    [(ngModel)]="transactionDetails.transactionDate"  />
+            </div> 
+        </div>
+    </div>
+  
+    <!-- <div class="row">
+        <div class="col-md-4">
+           <div class="input-fields">
+                <label class="form-label">Transaction Date </label>
+                <input type="date" class="form-control" id="date" name="date"
+                    [(ngModel)]="transactionDetails.transactionDate" />
+            </div> 
+        </div>
+        <div class="col-md-4" *ngIf="transactionType==='receivable'">
+            <div class="input-fields">
+                <label class="form-label">Received From</label>
+                <input type="text" class="form-control" placeholder="Received From" id="recievedFrom"
+                    name="recievedFrom" [(ngModel)]="transactionDetails.recievedFrom" required>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div> -->
+   
+    <div class="row">
+        <div class="col-md-12">
+            <label for="" class="form-label">Description</label>
+            <textarea class="form-control"  placeholder="Description" rows="1" name="description"
+                id="description" [(ngModel)]="transactionDetails.description"></textarea>
+        </div>
+    </div>
+   
+    <div class="row">
+       
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+        <fieldset>
+          <legend>Payment Gateway</legend>
+    <div class="row">
+        <div class="col-md-4">
+            <label for="" class="form-label">Amount</label>
+            <input class="form-control"  placeholder="Description" rows="1" name="description"
+                id="description" [(ngModel)]="transactionDetails.amount">
+        </div>
+        <div class="col-md-4">
+            <div class="input-fields">
+                <label class="form-label">Mode of Transaction</label>
+                <select id="transactionMode" class="form-select " name="transactionMode" required
+                    [(ngModel)]="transactionDetails.modeOfTransaction" 
+                    >
+                    <option value="">Select</option>
+                    <option value="Online">Online</option>
+                    <option value="DD">DD</option>
+                    <option value="Check">Cheque</option>
+                    <option value="bg">BG</option>
+                </select>
+            </div>
+        </div>
+        
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-10">
+                    <div class="container form_new" *ngIf="transactionDetails.modeOfTransaction === 'Online'">
+                        <div class="row   ">    
+                            <h3 style="color: orange; background-color: lightgray; padding-left: 20px;"> Enter Online Details</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-fields">
+                                    <label class="form-label">Bank Name</label>
+                                    <input type="text" class="form-control" placeholder="Bank Name" id="bankName" name="bankName" [(ngModel)]="online.bankName"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-fields">
+                                    <label class="form-label">Transaction Number</label>
+                                    <input type="text" class="form-control" placeholder="Transaction Number" id="transactionNo" [(ngModel)]="online.transactionNo"
+                                        name="transactionNo"  required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <!-- DD Form -->
+                <div class="container form_new" *ngIf="transactionDetails.modeOfTransaction === 'DD'">
+                    <div class="row   ">
+                        <i>
+                          <h3 style="color: orange;  background-color: lightgray; padding-left: 20px;"> Enter DD Details</h3>
+                        </i>
+                      </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-fields">
+                                <label class="form-label">Issue Date </label>
+                                <input type="date" class="form-control" id="issueDate" name="issueDate"  [(ngModel)]="ddDto.issueDate" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-fields">
+                                <label class="form-label">Clear Date </label>
+                                <input type="date" class="form-control" id="clearDate" name="clearDate"  [(ngModel)]="ddDto.clearDate"/>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <br>
+                
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-fields">
+                                <label class="form-label">Bank Name</label>
+                                <input type="text" class="form-control" placeholder="Bank Name" id="bankName" name="bankName"
+                                [(ngModel)]="ddDto.bankName"   required>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-6">
+                            <div class="input-fields">
+                                <label class="form-label">DD Number</label>
+                                <input type="text" class="form-control" placeholder="Bank Name" id="bankName" name=""
+                                [(ngModel)]="ddDto.bankName"  required>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                
+                <!-- Cheque Form -->
+                <div class="container form_new" *ngIf="transactionDetails.modeOfTransaction === 'Check'">
+                    
+                    <div class="row   ">
+                        <i>
+                          <h3 style="color: orange; background-color: lightgray; padding-left: 20px;"> Enter Cheque Details</h3>
+                        </i>
+                      </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-fields">
+                                <label class="form-label">Bank Name</label>
+                                <input type="text" class="form-control" placeholder="Bank Name" id="bankName" name="bankName"  [(ngModel)]="checkDto.bankName"
+                                  required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-fields">
+                                <label class="form-label">Cheque Number</label>
+                                <input type="text" class="form-control" placeholder="Check Number" id="chequeNumber" name="chequeNumber"  [(ngModel)]="checkDto.chequeNumber"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <br>
+                
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-fields">
+                                <label class="form-label">Check Issue Date </label>
+                                <input type="date" class="form-control" id="checkIssueDate" name="checkIssueDate"  [(ngModel)]="checkDto.checkIssueDate"
+                                     />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-fields">
+                                <label class="form-label">Check Create Date </label>
+                                <input type="date" class="form-control" id="checkCreateDate" name="checkCreateDate"  [(ngModel)]="checkDto.checkCreateDate"
+                                     />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bg -->
+                <div class="container form_new" *ngIf="transactionDetails.modeOfTransaction === 'bg'">
+                    <div class="row   ">
+                      
+                          <h3 style="color: orange; background-color: lightgray; padding-left: 20px;"> Enter BG Details</h3>
+                       
+                      </div>
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="input-fields">
+                                <label class="form-label">BG Number </label>
+                                <input type="number" class="form-control" id="bgNumber" name="bgNumber" [(ngModel)]="bgDto1.bgNumber"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-fields">
+                                <label class="form-label">Issue Date</label>
+                                <input type="date" class="form-control" id="IssueDate" name="IssueDate" [(ngModel)]="bgDto1.IssueDate" 
+                                     />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-fields">
+                                <label class="form-label">Expirey Date</label>
+                                <input type="date" class="form-control" id="clearDate" name="clearDate"  [(ngModel)]="bgDto1.clearDate"     />
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            
+        </div>
+        <div class="col-md-1">
+
+        </div>
+    </div>
+</fieldset>
+</div></div>
+
+   
+    
+
+    <!-- <div class="row">
+        <div class="col-md-4">
+            <div class="input-fields">
+                <label class="form-label">Paid To</label>
+                <input type="text" class="form-control" placeholder="Paid To" id="paidTo" name="paidTo"
+                    [(ngModel)]="transactionDetails.paidTo" required>
+            </div>
+        </div>
+    </div> -->
+<br>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-fields ms-3">
+                <input type="checkbox" [(ngModel)]="isRefundable">
+                <!-- <label class="form-label"></label> -->
+                <!-- <input  type="checkbox" style="margin-top: 5px;" id="myCheckbox" name="myCheckbox" [(ngModel)]="isRefundable" > -->
+             
+                <label style="margin-left: 5px; margin-bottom: 5px;" for="myCheckbox">Is Refundable</label>
+                
+            </div>
+        </div>
+        <div class="col-md-4" *ngIf="isRefundable===true">
+            <div class="input-fields">
+                <label class="form-label">Expiry Date</label>
+                <input type="date" class="form-control"  id="expiryDate" name="expiryDate"  [(ngModel)]="transactionDetails.expiryDate"
+                     />
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary"   (click)="onSubmit()">
+                Save
+            </button>
+
+            <button class="btn btn-warning" mat-dialog-close>
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>

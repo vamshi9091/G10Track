@@ -1,0 +1,561 @@
+<div class="container container1">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center" id="sticky-header">
+                <h2>CREATE TENDER   </h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="form_new">
+                <div class="row">
+                    <!-- <div class="col-md-2"></div> -->
+                    <div class="col-md-4">
+                        <div class="input-field">
+                            <label for="">Vertical<span class="text-danger">*</span></label>
+                            <select id="verticals" name="verticals" [(ngModel)]="tenderdto.verticals"  (ngModelChange)="onChangeSublistname($event)" required ngModel
+                                #verticals="ngModel">
+                                <option value="" disabled>Select a Vertical</option>
+                                <option *ngFor="let vertical of Verticals.data" [value]="vertical.listItem">{{
+                                    vertical.listItem }}</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                            <!-- <label >Verticals</label> -->
+                        </div>
+                        <div *ngIf="verticals.invalid && (verticals.dirty || verticals.touched)" class="alert ">
+                            <small *ngIf="verticals.errors?.['required']" class="text-danger">
+                              Vertical is required.
+                            </small>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-field">
+                            <label for="">Sub Vertical<span class="text-danger">*</span></label>
+                            <select id="subverticals" name="subverticals" [(ngModel)]="tenderdto.subverticals" required ngModel
+                                #subverticals="ngModel">
+                                <option value="" disabled>Select a SubVertical</option>
+                                <option *ngFor="let vertical of SubVerticalsdata" [value]="vertical.subListItem">{{
+                                    vertical.subListItem }}</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                            <!-- <label >Verticals</label> -->
+                        </div>
+                        <div *ngIf="subverticals.invalid && (subverticals.dirty || subverticals.touched)" class="alert ">
+                            <small *ngIf="subverticals.errors?.['required']" class="text-danger">
+                              Sub Vertical is required.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-field">
+                            <input type="number" id="value" name="value" [(ngModel)]="tenderdto.value" >
+                            <label>Value</label>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-2"></div> -->
+                </div>
+                <div class="row">
+                    <!-- <div class="col-md-2"></div> -->
+                    <div class="col-md-6">
+                        <div class="input-field">
+                            <input type="text" id="tendernum" name="tendernum" [(ngModel)]="tenderdto.tenderNum"
+                                required ngModel #tendernum="ngModel">
+                            <label>Tender No <span class="text-danger">*</span></label>
+                        </div>
+                        <div *ngIf="tendernum.invalid && (tendernum.dirty || tendernum.touched)" class="alert">
+                            <small *ngIf="tendernum.errors?.['required']" class="text-danger">
+                              Tender Number is required.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-field">
+                            <input type="text" id="tendernum" name="tendernum" [(ngModel)]="tenderdto.tenderId"
+                                 ngModel #tendernum="ngModel">
+                            <label>Tender Id</label>
+                        </div>
+                    </div>
+                    <!-- <div class="selected-depts" *ngIf="tenderdto.userDeptDto">  Selected Departments:
+                        <ul>
+                          <li *ngFor="let dept of tenderdto.userDeptDto">{{ dept.deptName }}</li>
+                        </ul>
+                      </div> -->
+
+                    <!-- <div class="col-md-2"></div> -->
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="input-field">
+                                <label for="">State<span class="text-danger">*</span></label>
+                            <select id="states" name="states" [(ngModel)]="tenderdto.states" required ngModel
+                                #states="ngModel">
+                                <option value="" disabled>Select a state</option>
+                                <option *ngFor="let state of States" [value]="state.states">{{ state.states }}
+                                </option>
+                            </select>  
+                        </div>
+                        <div *ngIf="states.invalid && (states.dirty || states.touched)" class="alert ">
+                            <small *ngIf="states.errors?.['required']" class="text-danger">
+                              State is required.
+                            </small>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-4">
+                        <mat-form-field>
+                          <input matInput placeholder="State" aria-label="State" [matAutocomplete]="auto" [(ngModel)]="selectedState" required>
+                          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayState">
+                            <div *ngIf="filteredStates | async as states">
+                                <mat-option [value]="state" *ngFor="let state of States.data">
+                                  {{ state.states}}
+                                </mat-option>
+                              </div>
+                          </mat-autocomplete>
+                        </mat-form-field>
+                      </div> -->
+                    <div class="col-md-4">
+                        <div class="input-field">
+                            <input type="text" id=" deptName" placeholder="Search Department " name="deptName"
+                                [(ngModel)]="selectedEmployee.deptName"  ngModel required  readonly #deptName="ngModel">
+                            <label> User Department<span class="text-danger">*</span></label>
+                            <i class="fa fa-search" (click)="openPopUp()" aria-hidden="true"></i>
+                        </div>
+                        <div *ngIf="deptName.invalid && (deptName.dirty || deptName.touched)" class="alert ">
+                            <small *ngIf="deptName.errors?.['required']" class="text-danger">
+                              Department Name is required.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-field">
+                            <input type="text" id="tender_Floating_Dept" name="tender_Floating_Dept" placeholder="Search Floating Department "
+                                [(ngModel)]="tenderdto.tenderFloatingDept"  ngModel
+                                #tender_Floating_Dept="ngModel">
+                    
+                            <label>Tender Floating Department</label>
+                            <i class="fa fa-search" (click)="openPopUp2()" aria-hidden="true"></i>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row remark">
+                    <!-- <div class="input-field"> -->
+                    <label>Description</label>
+                    <!-- <input type="text" id="desc1" name="desc1" [(ngModel)]="tenderdto.desc1" required> -->
+                    <div class="desc1">
+                        <textarea id="desc1" class="form-control" name="desc1" placeholder="Enter Description" rows="2"
+                            [(ngModel)]="tenderdto.desc1" ></textarea>
+                    </div>
+                    <!-- </div> -->
+                </div>
+
+
+                <br>
+                <div class="row">
+                    <fieldset>
+                        <legend>Date</legend>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="input-field">
+                                    <input type="date" id="tender_Float_Date" name="tender_Float_Date"
+                                        [(ngModel)]="tenderdto.tenderFloatDate" ngModel #tender_Float_Date="ngModel">
+                                    <label>Tender Float Date</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-field">
+                                    <input type="date" id="Bidding_date" name="Bidding_date"
+                                        [(ngModel)]="tenderdto.biddingDate">
+                                    <label>Bidding Date</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-field">
+                                    <input type="date" id="Prebid_date" name="Prebid_date"
+                                        [(ngModel)]="tenderdto.prebidDate"  ngModel>
+                                    <label>Prebid Date</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-field">
+                                    <input type="date" id="bidOpeningDate" name="bidOpeningDate"
+                                        [(ngModel)]="tenderdto.bidOpeningDate"  ngModel #bidOpeningDate="ngModel">
+                                    <label>Bid Opening Date</label>
+                                </div>
+                                <div *ngIf="bidOpeningDate.invalid && (bidOpeningDate.dirty || bidOpeningDate.touched)" class="alert ">
+                                    <small *ngIf="bidOpeningDate.errors?.['required']" class="text-danger">
+                                      Bid Opening Date is required.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="row">
+                    <fieldset>
+                        <legend>Payments</legend>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="input-field">
+                                    <input type="number" id="EMD" name="EMD" [(ngModel)]="tenderdto.emd">
+                                    <label>EMD</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-field">
+                                    <input type="number" id="documentfee" name="documentfee"
+                                        [(ngModel)]="tenderdto.documentFee" >
+                                    <label>Document Fee</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-field">
+                                    <input type="number" id="BG" name="BG" [(ngModel)]="tenderdto.bg" >
+                                    <label>BG</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="input-field">
+                                    <input type="number" id="transactionFee" name="transactionFee"
+                                        [(ngModel)]="tenderdto.transactionfee" >
+                                    <label>Transaction Fee</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-field">
+                                    <input type="number" id="processingFee" name="processingFee"
+                                        [(ngModel)]="tenderdto.processingfee" >
+                                    <label>Processing Fee</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-field">
+                                    <input type="number" id="corpusFee" name="corpusFee"
+                                        [(ngModel)]="tenderdto.corpusfee" >
+                                    <label>Corpus Fee</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div> 
+
+
+
+               
+<!-- <div class="row">
+  <fieldset>
+    <legend>Payments</legend>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="input-field" *ngIf="selectedPaymentOption === 'EMD'">
+          <input type="number" id="EMD" name="EMD" [(ngModel)]="tenderdto.emd">
+          <label>EMD</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="input-field" *ngIf="selectedPaymentOption === 'documentFee'">
+          <input type="number" id="documentfee" name="documentfee" [(ngModel)]="tenderdto.documentFee" required>
+          <label>Document Fee</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="input-field" *ngIf="selectedPaymentOption === 'BG'">
+          <input type="number" id="BG" name="BG" [(ngModel)]="tenderdto.bg" required>
+          <label>BG</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="input-field" *ngIf="selectedPaymentOption === 'transactionFee'">
+          <input type="number" id="transactionFee" name="transactionFee" [(ngModel)]="tenderdto.transactionfee" required>
+          <label>Transaction Fee</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="input-field" *ngIf="selectedPaymentOption === 'processingFee'">
+          <input type="number" id="processingFee" name="processingFee" [(ngModel)]="tenderdto.processingfee" required>
+          <label>Processing Fee</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="input-field" *ngIf="selectedPaymentOption === 'corpusFee'">
+          <input type="number" id="corpusFee" name="corpusFee" [(ngModel)]="tenderdto.corpusfee" required>
+          <label>Corpus Fee</label>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row">
+      <div class="col-md-12">
+        <select id="paymentOptions" name="paymentOptions" [(ngModel)]="selectedPaymentOption">
+          <option value="EMD">EMD</option>
+          <option value="documentFee">Document Fee</option>
+          <option value="BG">BG</option>
+          <option value="transactionFee">Transaction Fee</option>
+          <option value="processingFee">Processing Fee</option>
+          <option value="corpusFee">Corpus Fee</option>
+        </select>
+        <button (click)="addToSelectedList()">Add</button>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <li *ngFor="let item of selectedItems">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </fieldset>
+</div> -->
+
+ <div class="row">
+                   
+                    <div class="col-md-6">
+                        <div class="input-field">
+                            <!-- <input type="text" id="Tender_status" name="Tender_status"
+                                [(ngModel)]="tenderdto.tenderStatus" required>-->
+                            <label>Tender Status<span class="text-danger">*</span></label> 
+                            <select id="tenderStatus" name="tenderStatus" [(ngModel)]="tenderdto.tenderStatus" (ngModelChange)="onChangeSublistname2($event)" required
+                                ngModel #tenderStatus="ngModel">
+                                <option value="" selected>Select a Tender Status</option>
+                                <option *ngFor="let status of Tendername.data" [value]="status.listItem">{{
+                                    status.listItem }}</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                            <!-- <label >Tender Status</label> -->
+                            
+                        </div>
+                        <!-- <div *ngIf="tenderStatus.invalid && (tenderStatus.dirty || tenderStatus.touched)" class="alert ">
+                            <small *ngIf="tenderStatus.errors?.['required']" class="text-danger">
+                              Tender Status is required.
+                            </small>
+                        </div> -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-field">
+                            <!-- <input type="text" id="Tender_status" name="Tender_status"
+                                [(ngModel)]="tenderdto.tenderStatus" required>-->
+                            <label>Tender Sub Status<span class="text-danger">*</span></label> 
+                            <select id="substatus" name="substatus" [(ngModel)]="tenderdto.substatus" required  
+                                ngModel #substatus="ngModel">
+                                <option value="" disabled>Select a Sub Tender Status</option>
+                                <option *ngFor="let status of SubTendernamedata" [value]="status.subListItem">{{
+                                    status.subListItem }}</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                            <!-- <label >Tender Status</label> -->
+                        </div>
+                        <div *ngIf="substatus.invalid && (substatus.dirty || substatus.touched)" class="alert ">
+                            <small *ngIf="substatus.errors?.['required']" class="text-danger">
+                              Tender Sub Status is required.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-field">
+                            <!-- id="substatus" name="substatus" [(ngModel)]="tenderdto.substatus" required  ngModel #substatus="ngModel" -->
+                            <input type="text" id="assigned_To" placeholder="Search Assigned To" name="assigned_To" [(ngModel)]="tenderdto.assignedTo"
+                            required readonly   ngModel #assigned_To="ngModel">
+                            <label> Assigned To<span class="text-danger">*</span></label>
+                            <i class="fa fa-search" (click)="openPopUpForEmployee()" aria-hidden="true"></i>
+                           
+                        </div>
+                        <div *ngIf="assigned_To.invalid && (assigned_To.dirty || assigned_To.touched)" class="alert">
+                            <small *ngIf="assigned_To.errors?.['required']" class="text-danger">
+                              Assigned To is required.
+                            </small>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4">
+                        <div class="input-field">
+                            <input type="text" id="BOM" name="BOM" [(ngModel)]="tenderdto.bom" required>
+                            <label>BOM</label>
+                        </div>
+                    </div> -->
+                    <div class="col-md-6">
+                        <div class="input-field">
+                            <input type="text" id=" url" name="url" [(ngModel)]="tenderdto.url" >
+                            <label>URL</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- <div class="row">
+                    <fieldset>
+                        <legend>User Department</legend>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="input-field">
+                                    <input type="text" id="deptName" name="deptName" [(ngModel)]="tenderdto.userDeptDto.deptName" required>
+                                    <label>Department Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-field">
+                                    <input type="text" id="address" name="address" [(ngModel)]="tenderdto.userDeptDto.address" required>
+                                    <label>Address</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-field">
+                                    <input type="text" id="state" name="state" [(ngModel)]="tenderdto.userDeptDto.state" required>
+                                    <label>State</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-field">
+                                    <input type="text" id="country" name="country" [(ngModel)]="tenderdto.userDeptDto.country" required>
+                                    <label>Country</label>
+                                </div>
+                            </div>
+                            
+                        </div> 
+                        </fieldset>
+                        </div> -->
+
+
+
+
+                        <div class="row">
+                            <fieldset>
+                              <legend>Bill Of Materials</legend>
+                              <form [formGroup]="bomForm" #bomFormRef="ngForm" (ngSubmit)="onSubmits()">
+                                <div class="bg">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="input-fields">
+                                        <label for="item">Item</label>
+                                        <input id="item" class="form-control" placeholder="Item" formControlName="item"
+                                          [(ngModel)]="bomForm.value.item">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="input-fields">
+                                        <label for="quantity">Quantity</label>
+                                        <input id="quantity" class="form-control" placeholder="Quantity" formControlName="quantity"
+                                          type="number" [(ngModel)]="bomForm.value.quantity">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                      <div class="input-fields ">
+                                        <label for="description">Description</label>
+                                        <textarea id="description" class="form-control" placeholder="Description"
+                                          formControlName="description" [(ngModel)]="bomForm.value.description"></textarea>
+                                        <!-- <label for="description">Description</label>   -->
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <br>
+                                <div class="addbtn ms-4">
+                                  <button mat-flat-button color="accent" type="submit">Add</button>
+                                </div>
+              
+                              </form>
+              
+                              <br>
+                              <!-- <div *ngIf="boms.length > 0"> -->
+              
+                              <!-- </div> -->
+              
+                              <div class="mat-elevation-z5">
+                                <table mat-table [dataSource]="dataSource" matSort>
+                
+                                  <!-- Item Column -->
+                                  <ng-container matColumnDef="items">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Item </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.item}} </td>
+                                  </ng-container>
+                
+                                  <!-- Description Column -->
+                                  <ng-container matColumnDef="description">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+                                  </ng-container>
+                
+                                  <!-- Quantity Column -->
+                                  <ng-container matColumnDef="quantity">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+                                    <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
+                                  </ng-container>
+                
+                                  <!-- Action Column -->
+                                  <ng-container matColumnDef="action">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                                    <td mat-cell *matCellDef="let row">
+                                      <button mat-icon-button color="warn" (click)="removeRow(row)">
+                                        <mat-icon>cancel</mat-icon>
+                                      </button>
+                                      <!-- <button mat-icon-button color="accent" (click)="editsRow(row)">
+                                        <mat-icon>edit</mat-icon>
+                                    </button> -->
+                                    </td>
+                                    
+                                  </ng-container>
+                
+                                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                
+                                </table>
+                
+                                <mat-paginator class="table-container" [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons
+                                  aria-label="Select page of BOM items"></mat-paginator>
+                
+                              </div>
+                            </fieldset>
+                            
+              
+                          </div>
+             
+
+
+
+
+                <div class="row remark">
+                    <label>Remarks</label>
+                    <div class="desc1">
+                        <!-- <div class="input-field"> -->
+                        <!-- <input type="text" id="remarks" name="remarks" [(ngModel)]="tenderdto.remarks" required> -->
+                        <textarea id="remarks" class="form-control" name="remarks" placeholder="Enter Remarks" rows="2"
+                            [(ngModel)]="tenderdto.remarks" ></textarea>
+
+                    </div>
+                    <!-- </div> -->
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="button-group">
+                        <button type="submit" [disabled]="!myForm.form.valid" class="btn btn-primary" >
+                            Save
+                        </button>
+
+                        <button type="submit" class="btn btn-warning" routerLink="/home/tender-get">
+                            Back
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+/* :host {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.loginbg{
+    margin-top: 5%;
+}
+.mat-mdc-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    max-width: 400px;
+    width: 400px;
+    /* // width: 380px;
+    // background-color: #F0F2F5; */
+}
+
+
+/* .-mdc-text-field--filled:not(.mdc-text-field--disabled) . {
+    background-color: transparent !important;
+}
+.mat-mdc-form-field-focus-overlay {
+    background-color: none !important;
+} */
+.mat-mdc-card-title {
+    margin-top:10px;
+    text-align: center; /* Center-align the text */
+    color: #D128AC; /* Set the color of the title */
+}
+
+.mat-mdc-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-mdc-card-header img {
+    width: 130px;
+    height: 70px;
+    margin-right: 10px; /* Adjust as needed */
+    margin-bottom: 10px; /* Adjust as needed */
+}
+/* // .mat-mdc-card>.btn:last-child {
+//     margin-bottom: 16px;
+// } */
+
+.btn {
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.mat-mdc-form-field {
+margin-left: 25px;
+    width: 400px;
+    text-align: center;
+    align-items: center;
+}
+.image{
+    text-align: center;
+}
+.image .img {
+    margin-bottom: 10px;
+    width: 100px;
+ 
+    justify-content: center;
+}
+
+p,
+a {
+    text-align: left;
+    text-decoration: none;
+}
+
+.mat-mdc-card {
+    background:#f5f5f5;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.pwd {
+    text-align: right;
+    margin-right: 10px;
+}
+
+a {
+    color: rgb(94, 94, 246);
+}
+
+.signup {
+    margin-left: 12px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgb(2, 44, 123);
+}
+
+
+
+
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+   
+    .mat-mdc-card-content {
+        max-width: 500px; /* Adjusted max-width for medium screens */
+        width: 100%; /* Occupy full width of the viewport */
+    }
+
+    .mat-mdc-form-field {
+        width: calc(100% - 60px); /* Adjusted width for form fields */
+    }
+
+    img {
+        width: 300px; /* Adjusted width for the logo image */
+    }
+}
+@media (max-width: 320px) {
+   
+    .mat-mdc-form-field {
+        display: flex;
+        width: calc(100% - 50%); /* Adjusted width for form fields */
+    }
+    */
+
+    img {
+        width: 200px;
+margin-left: 15%;
+margin-top: 15%;
+    }
+}

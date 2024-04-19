@@ -1,0 +1,96 @@
+<div class="container container1">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h2>UPDATE EMPLOYEE</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="form_new">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="input-fields">
+                            <label class="form-label">Employee Name</label>
+                            <input type="text" class="form-control" placeholder="Employee Name" id="empName"
+                                name="empName" [(ngModel)]="employeeDto.name" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-fields">
+                            <label class="form-label">Date of Joining</label>
+                            <input type="date" class="form-control" id="doj" name="doj" [(ngModel)]="employeeDto.doj" />
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4">
+                        <div class="input-fields">
+                            <label for="" class="form-label">Designation</label>
+                            <select class="form-select" name="designation" id="designation"
+                                [(ngModel)]="employeeDto.designation">
+                                <option value="">Select</option>
+                                <option value="Director">Director</option>
+                                <option value="Manager">Manager</option>
+                            </select>
+                        </div>
+                    </div> -->
+                    <div class="col-md-4">
+                        <div class="input-fields">
+                            <label class="form-label">Role</label>
+                            <select id="role" name="role" class="form-select" [(ngModel)]="employeeDto.role" required>
+                                <option value="">Select Role</option>
+                                <option value="ROLE_ADMIN">Admin</option>
+                                <option value="ROLE_USER">User</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                   
+                    <div class="col-md-4">
+                        <div class="input-fields">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control" id="emaiid" name="emaiid" [(ngModel)]="employeeDto.emaiid" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-fields">
+                            <label class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="phoneNum" name="phoneNum" [(ngModel)]="employeeDto.phoneNum" />
+                        </div>
+                    </div>
+                </div>
+<br>
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-field">
+                    <label>Choose Image</label> <br>
+                    <input type="file" name="file" (change)="onFileChange($event)" required>
+                </div>
+            </div>
+                  </div> -->
+
+                <br><br>
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">
+                            Update
+                        </button>
+
+                        <button class="btn btn-warning" (click)="onBack()">
+                            Back
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

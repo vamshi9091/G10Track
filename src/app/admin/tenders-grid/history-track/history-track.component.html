@@ -1,0 +1,83 @@
+<!-- <p>payable-tenders works!</p> -->
+<div class="form_new">
+    <div class="btn-container">
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. John" #input>
+        </mat-form-field> -->
+
+        <button mat-fab extended class="excel" (click)="exporter.exportTable('xlsx',{fileName:'History-Track'})">
+            <i class="bi bi-download"></i> &nbsp; Export to Excel
+        </button>
+        <!-- (click)="exporter.exportTable('xlsx',{fileName:'Task-Data'})" -->
+
+        <!-- <button mat-fab extended class="btn" (click)="createEmployee()">
+            <mat-icon>add</mat-icon>Create Employee
+        </button> -->
+
+    </div>
+
+    <div>
+        <div class="mat-elevation-z8">
+            <table  mat-table matTableExporter [dataSource]="dataSource" matSort #exporter="matTableExporter">
+
+                <!-- <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+                    <td mat-cell *matCellDef="let row">{{row.id}}   </td>
+                </ng-container> -->
+
+                <ng-container matColumnDef="actCode">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Act Code</th>
+                    <td mat-cell *matCellDef="let row"> {{row.actCode}} </td>
+                </ng-container>
+                <!-- <ng-container matColumnDef="userName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>User Name</th>
+                    <td mat-cell *matCellDef="let row"> {{row.userName}} </td>
+                </ng-container> -->
+
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+                    <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actTime">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Time Stamp</th>
+                    <td mat-cell *matCellDef="let row"> {{row.actTime | date :'short'}} </td>
+                </ng-container>
+
+             
+
+                <!-- <ng-container matColumnDef="validityDate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Validity Date</th>
+                    <td mat-cell *matCellDef="let row"> {{row.validityDate}} </td>
+                </ng-container> -->
+<!-- 
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                    <td mat-cell *matCellDef="let row">
+                        <div style="display: flex; align-items: center;">
+                            <button mat-icon-button color="primary" (click)="viewEmployee(row)">
+                                <mat-icon>visibility</mat-icon>
+                            </button>
+                            <button mat-icon-button color="accent" (click)="editEmployee(row)">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </div>
+                    </td>
+                </ng-container> -->
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the History </td>
+                </tr>
+            </table>
+
+            <mat-paginator class="table-container" [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons
+                aria-label=""></mat-paginator>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+.background_color{
+    background-image: linear-gradient(to right top, rgb(8, 74, 110), rgb(36, 163, 131));
+    height: auto;
+}
+.bold{
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    line-height: 1.1;
+    padding-top: 40px;
+}   
+.bold1{
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    transition: color .3s;
+    line-height: 1.1;
+}
+.text_color{
+    color: #eee;
+    font-size: 18px;
+    font-weight: 300;
+}
+.email_color{
+    color: #FE8F08;
+    margin-left: 10px;
+}
+.circle-3 {
+    /* display: inline-block; */
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    /* text-align: center; */
+    border-radius: 100%;
+}
+.brand-bg a.facebook i {
+    background: #3280e7;
+}
+.brand-bg a i {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+.brand-bg a.twitter i {
+    background: #32c8de;
+}
+.brand-bg a.google-plus i {
+    background: #f96f4a;
+}
+.brand-bg a.pinterest i {
+    background: #ed5441;
+}
+.p-3{
+    /* padding: 20px 0 20px; */
+    color: #fff;
+    background: #263238;
+}
+p:hover{
+       color: #b3b0b0 ;
+}
+
+@media(max-width:430px){
+    .background_color{
+        height: auto;
+    }
+}
+
+/* footer .title{
+    text-align: center;
+}
+
+footer{
+    background: #263238;
+    width: 100%;
+  padding: 30px;
+} */

@@ -1,0 +1,93 @@
+<input type="checkbox" id="nav-toggle">
+<!-- side bar  -->
+<div class="sidebar">
+
+        <div class="sidebar-menu">
+                        <!-- side bar brand name -->
+        <div class="sidebar-brand">
+               
+                <!-- <h3><span>G10Track</span></h3> -->
+                <a routerLink="#" >
+                    <img src="../../../assets/images/G__5_-removebg-preview.png" alt="Logo" class="front_inline_39">
+                  </a>
+        </div>
+        <!-- side bar menu list --><br><br>
+                <ul class="mt-5">
+                        <!-- <li><a href="" class="active"><span class="las la-igloo"></span>
+                            <span>Dashboard</span></a></li> -->
+                        <li routerLinkActive="active"><a routerLink="/home/dashboard"><span class="las la-chart-bar"></span>
+                                        <span>Dashboard</span></a></li>
+                        <li routerLinkActive="active"><a routerLink="/home/tender-get"><span class="las la-file"></span>
+                                        <span>All Tenders</span></a></li>
+                        <li routerLinkActive="active"><a routerLink="/home/live-tenders"><span class="las la-bolt"></span>
+                                        <span>Live Tenders</span></a></li>
+                        <li routerLinkActive="active"><a routerLink="/home/employee-get"><span class="las la-id-card"></span>
+                                        <span>Employee</span></a></li>
+                        <!-- <li><a href=""><span class="las la-user-circle"></span>
+                            <span>Accounts</span></a></li> -->
+                        <!-- <li><a routerLink="/home/systemlist"><span class="las la-cog"></span>
+                                        <span>Settings</span></a>
+                                        <ul>
+                                                <li><a routerLink="/home/systemlist">System List</a></li>
+                                            
+                                            </ul>
+                                </li> -->
+                                <li >
+                                        <a (click)="toggleSettingsDropdown()">
+                                          <span class="las la-cog"></span>
+                                          <span>Settings</span>
+                                        </a>
+                                        <!-- Nested list of settings -->
+                                        <ul *ngIf="showSettingsDropdown" (mouseleave)="hideSettingsDropdown()">
+                                          <li routerLinkActive="active"><a routerLink="/home/systemlist"><span class="las la-chevron-right"></span><span>System List</span></a></li>
+                                          <li routerLinkActive="active"><a routerLink="/home/user-dept"><span class="las la-chevron-right"></span><span>User Department</span></a></li>
+                                          <!-- Add more items as needed -->
+                                        </ul>
+                                </li>
+                        <!-- <li><a routerLink="/home/adminuserget"><span class="las la-user"></span>
+                                        <span>Admin User</span></a></li>
+                        <li><a routerLink="/home/ProductImageGet"><span class="las la-receipt"></span>
+                                        <span>Product Images</span></a></li> -->
+                      <li ><a (click)="logout()"><span class="las la-sign-out-alt"></span>
+                                            <span>Logout</span></a></li>
+                </ul>
+                <div class=" powered-by-container">&copy;<span id="year">2024</span><br><span> Frazen Technologies Pvt.Ltd.<br> All rights reserved.</span></div>
+
+                <!-- <div class="powered-by-container">
+                        <span>Powered by Frazen Technology Pvt Ltd</span>
+                </div> -->
+        </div>
+</div>
+<!-- main content code -->
+<header>
+        <h2>
+                <label for="nav-toggle">
+                        <span class="fa fa-align-justify"></span>
+                </label>
+                 
+        </h2>
+        <!-- <a routerLink="#" class="standard-logo pull-left">
+            <img src="../../../assets/images/logoimg3.png" alt="Logo" class="front_inline_39">
+          </a> -->
+          <img id="header-img" src="" alt="" style="display: none; width: 100px; height: 50px; margin-top: 10px;">
+        <!-- <div class="search-wrapper">
+                <span class="lab la-search"></span>
+                <input type="search" placeholder="Search Here">
+        </div> -->
+        <div class="user-wrapper ">
+                <img src="../../../assets/images/avatar.jpg" alt=""
+                        style="width: 30px; height: 30px; border-radius: 50px;margin-top: 23px;">
+                <div>
+                        <h4 class="user-wrapper-name">{{roles.sub}}</h4>
+                        <small class="user-wrapper-role">{{roles.roles }}</small>
+                </div>
+        </div> 
+        <hr id="horizental-line">
+</header>
+<div class="main-content">
+        <main>
+                <router-outlet></router-outlet>
+                <!-- <router-outlet></router-outlet> -->
+        </main>
+                
+</div>

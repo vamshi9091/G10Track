@@ -1,0 +1,115 @@
+<div class="container container1">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h2>CREATE EMPLOYEE </h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="form_new">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="input-field">
+                            <input type="text" id="empName" name="empName" [(ngModel)]="name" required>
+                            <label>Employee Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-field">
+                            <label class="form-label">Role</label>
+                            <select id="role" name="role" [(ngModel)]="role" required>
+                                <option value="">Select Role</option>
+                                <option value="ROLE_ADMIN">Admin</option>
+                                <option value="ROLE_USER">User</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-field">
+                            <input type="date" id="doj" name="doj" [(ngModel)]="doj" required>
+                            <label>Date of Joining</label>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <!-- <div class="col-md-4">
+                        <div class="input-field">
+                            <label class="form-label">Designation</label>
+                            <select id="verticals" name="verticals" [(ngModel)]="designation" required>
+                                <option value="">Select</option>
+                                <option value="Director">Director</option>
+                                <option value="Manager">Manager</option>
+                            </select>
+                        </div>
+                    </div> -->
+                    <div class="col-md-4">
+                        <div class="input-field">
+                            <input type="text" id="mail" name="mail" [(ngModel)]="mail" required>
+                            <label>Email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-field">
+                            <input type="text" id="ph" name="ph" [(ngModel)]="ph" required>
+                            <label>Phone Number</label>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- <div class="custom-file-input">
+                    <label for="upload">Choose Image</label>
+                    <input type="file" (change)="onSelectFile($event)" id="upload"  [(ngModel)]="employeeDto.imageData" accept=".jpg,.jpeg,.png"> &nbsp;
+                    <span *ngIf="Url" (click)="removeSelectFile()" id="span">
+                        <i class="bi bi-x-circle-fill"></i>
+                    </span> &nbsp;
+                    <img *ngIf="Url" [src]="Url" width="150" height="150">
+                    <br>
+                    <span *ngIf="imgFileName" id="file-name">{{imgFileName}}</span>
+                </div> -->
+
+                <!-- <div class="custom-file-input">
+                    <label for="upload">Choose Image</label>
+                    <input type="file" (change)="onSelectFile($event)" formControlName="empImage" id="upload"
+                        accept=".jpg,.jpeg,.png"> &nbsp;
+                    <span *ngIf="Url" (click)="removeSelectFile()" id="span">
+                        <i class="bi bi-x-circle-fill"></i>
+                    </span> &nbsp;
+                    <img *ngIf="Url" [src]="Url" width="150" height="150">
+                    <br>
+                    <span *ngIf="imgFileName" id="file-name">{{imgFileName}}</span>
+                </div> -->
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-field">
+                    <label>Choose Image</label> <br>
+                    <input type="file" name="file" (change)="onFileChange($event)" required>
+                </div>
+            </div>
+                  </div> -->
+                <br>
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+
+                        <button type="submit" class="btn btn-warning" routerLink="/home/employee-get">
+                            Back
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
